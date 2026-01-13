@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Batalla que Nadie Vio Venir | Tesla vs BYD</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <h1 class="title">⚡ LA BATALLA QUE NADIE VIO VENIR</h1>
+            <p class="subtitle">Tesla vs BYD | 2018-2024</p>
+        </div>
+    </header>
+
+    <!-- INTRO SCREEN -->
+    <section id="intro-screen" class="intro-screen">
+        <div class="intro-content">
+            <h2>2018</h2>
+            <p>Tesla era sinónimo de coche eléctrico.</p>
+            <p>El mundo conocía a Elon Musk.</p>
+            <p>El Model S había revolucionado la industria.</p>
+            <p class="highlight">Pero una empresa china estaba a punto de cambiar el juego.</p>
+            <p class="highlight-secondary">Y casi nadie en Occidente se dio cuenta.</p>
+            <button id="start-btn" class="btn-primary">▶ Ver la Historia</button>
+        </div>
+    </section>
+
+    <!-- MAIN VISUALIZATION -->
+    <main id="main-viz" class="main-viz hidden">
+        
+        <!-- YEAR DISPLAY -->
+        <div class="year-display">
+            <span class="year-label">AÑO</span>
+            <span id="current-year" class="year-value">2018</span>
+        </div>
+
+        <!-- RACE TRACKS (2 carriles) -->
+        <div class="race-container">
+            
+            <!-- BYD Track -->
+            <div class="track" data-brand="byd">
+                <div class="track-label">
+                    <!-- OPCIÓN 1: Con logo (descomentar cuando tengas las imágenes) -->
+                    <!-- <img src="assets/byd-logo.png" alt="BYD" class="brand-logo"> -->
+                    
+                    <!-- OPCIÓN 2: Con emoji (por ahora) -->
+                    <span class="brand-icon">🔵</span>
+                    <span class="brand-name">BYD</span>
+                </div>
+                <div class="track-bar-container">
+                    <div id="bar-byd" class="track-bar byd-bar">
+                        <span class="bar-value">0</span>
+                    </div>
+                </div>
+                <div class="track-stats">
+                    <span id="stat-byd" class="stat-value">0%</span>
+                </div>
+            </div>
+
+            <!-- Tesla Track -->
+            <div class="track" data-brand="tesla">
+                <div class="track-label">
+                    <!-- OPCIÓN 1: Con logo (descomentar cuando tengas las imágenes) -->
+                    <!-- <img src="assets/tesla-logo.png" alt="Tesla" class="brand-logo"> -->
+                    
+                    <!-- OPCIÓN 2: Con emoji (por ahora) -->
+                    <span class="brand-icon">🔴</span>
+                    <span class="brand-name">TESLA</span>
+                </div>
+                <div class="track-bar-container">
+                    <div id="bar-tesla" class="track-bar tesla-bar">
+                        <span class="bar-value">0</span>
+                    </div>
+                </div>
+                <div class="track-stats">
+                    <span id="stat-tesla" class="stat-value">0%</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ANNOTATION -->
+        <div id="annotation" class="annotation hidden">
+            <p id="annotation-text"></p>
+        </div>
+
+        <!-- CONTROLS -->
+        <div class="controls">
+            <button id="play-btn" class="btn-control">▶ Play</button>
+            <button id="pause-btn" class="btn-control hidden">⏸ Pause</button>
+            <button id="reset-btn" class="btn-control">↻ Reset</button>
+            <div class="speed-control">
+                <label for="speed-slider">Velocidad:</label>
+                <input type="range" id="speed-slider" min="0.5" max="2" step="0.5" value="1">
+                <span id="speed-value">1x</span>
+            </div>
+        </div>
+
+        <!-- METRICS PANEL -->
+        <div class="metrics-panel">
+            <div class="metric">
+                <span class="metric-label">TOTAL MERCADO</span>
+                <span id="total-market" class="metric-value">0 M</span>
+            </div>
+            <div class="metric">
+                <span class="metric-label">LÍDER</span>
+                <span id="current-leader" class="metric-value">-</span>
+            </div>
+            <div class="metric">
+                <span class="metric-label">DIFERENCIA</span>
+                <span id="gap" class="metric-value">-</span>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- OUTRO SCREEN -->
+    <section id="outro-screen" class="outro-screen hidden">
+        <div class="outro-content">
+            <h2>2024</h2>
+            <p>BYD vende 4.3 millones de vehículos eléctricos.</p>
+            <p>Tesla: 1.8 millones. Estancado.</p>
+            <p class="highlight">BYD es 2.4 veces más grande que Tesla.</p>
+            <p class="highlight-secondary">Y la mayoría del mundo occidental aún no lo sabe.</p>
+            
+            <div class="outro-summary">
+                <p><strong>Dos estrategias. Dos filosofías.</strong></p>
+                <p>🇺🇸 USA: Innovation, premium, brand</p>
+                <p>🇨🇳 China: Scale, integración vertical, todos los precios</p>
+            </div>
+            
+            <p class="question">¿Puede alguien detener a BYD?</p>
+            <button id="replay-btn" class="btn-primary">↻ Ver de Nuevo</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p class="credits">
+                📊 Visualización: Amin Rkiek | 
+                📈 Datos: Tesla Investor Relations, BYD Official Reports | 
+                🗓️ Período: 2018-2024
+            </p>
+            <p class="disclaimer">
+                * Tesla: Vehículos 100% eléctricos | BYD: Vehículos eléctricos + híbridos enchufables
+            </p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="js/data.js"></script>
+    <script src="js/animation.js"></script>
+</body>
+</html>
